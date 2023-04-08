@@ -9,17 +9,21 @@ import { useUsers } from '../context/UsersContext'
 import { filterUsersBySearch } from '../utils/filterUsersBySearch'
 
 export function useFilteredUsers() {
-  const { initialUsers, loading, updateFavorite } = useUsers()
-  const { fetchNext, fetchPrevious, page, resetPage } = usePagination({
-    dataPerPage: USERS_PER_PAGE,
-    initialPage: INITIAL_PAGE,
-    totalData: initialUsers.length,
-  })
-
   const [users, setUsers] = useState<User[]>([])
   const [search, setSearch] = useState('')
 
-  const usersPaginated = users.slice(page * USERS_PER_PAGE - USERS_PER_PAGE, page * USERS_PER_PAGE)
+  const { initialUsers, loading, updateFavorite } = useUsers()
+  const {
+    next,
+    prev,
+    page,
+    resetPage,
+    dataPaginated: usersPaginated,
+  } = usePagination<User>({
+    dataPerPage: USERS_PER_PAGE,
+    initialPage: INITIAL_PAGE,
+    data: users,
+  })
 
   const onSearch = (value: string) => {
     resetPage()
@@ -44,8 +48,8 @@ export function useFilteredUsers() {
     search,
     page,
     loading,
-    fetchNext,
-    fetchPrevious,
+    next,
+    prev,
     updateFavorite,
     onSearch,
   }
