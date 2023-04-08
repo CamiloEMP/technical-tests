@@ -3,7 +3,7 @@
     "id": "1",
     "name": "Alan Bello",
     "category": "manager",
-    "category-image": "images/manager.png",
+    "category-image": "images/manager.webp",
     "company": "Planet of the Grapes",
     "company-image": "images/grapes.png",
     "levelOfHappiness": "30"
@@ -12,7 +12,7 @@
     "id": "2",
     "name": "Alejandro Danza",
     "category": "manager",
-    "category-image": "images/manager.png",
+    "category-image": "images/manager.webp",
     "company": "Lord of the Fries",
     "company-image": "images/fries.png",
     "levelOfHappiness": "100"
@@ -21,7 +21,7 @@
     "id": "3",
     "name": "Sara Grecia",
     "category": "manager",
-    "category-image": "images/manager.png",
+    "category-image": "images/manager.webp",
     "company": "Hurry Curry",
     "company-image": "images/curry.png",
     "levelOfHappiness": "50"
@@ -30,7 +30,7 @@
     "id": "4",
     "name": "Ramon Llanura",
     "category": "manager",
-    "category-image": "images/manager.png",
+    "category-image": "images/manager.webp",
     "company": "Eggcellent Eats",
     "company-image": "images/eats.png",
     "levelOfHappiness": "100"
@@ -39,7 +39,7 @@
     "id": "5",
     "name": "Alejandro Pedros",
     "category": "manager",
-    "category-image": "images/manager.png",
+    "category-image": "images/manager.webp",
     "company": "Thai Tanic",
     "company-image": "images/tanic.png",
     "levelOfHappiness": "10"
@@ -48,7 +48,7 @@
     "id": "6",
     "name": "Pablo Ducho",
     "category": "manager",
-    "category-image": "images/manager.png",
+    "category-image": "images/manager.webp",
     "company": "Wok This Way",
     "company-image": "images/way.png",
     "levelOfHappiness": "97"
@@ -57,7 +57,7 @@
     "id": "7",
     "name": "Samuel Glorias",
     "category": "manager",
-    "category-image": "images/manager.png",
+    "category-image": "images/manager.webp",
     "company": "Sam and Ella",
     "company-image": "images/ella.png",
     "levelOfHappiness": "21"
@@ -66,7 +66,7 @@
     "id": "8",
     "name": "Anna Higo",
     "category": "manager",
-    "category-image": "images/manager.png",
+    "category-image": "images/manager.webp",
     "company": "Mustard’s Last Stand",
     "company-image": "images/stand.png",
     "levelOfHappiness": "10"
@@ -75,7 +75,7 @@
     "id": "9",
     "name": "Janine Trovello",
     "category": "manager",
-    "category-image": "images/manager.png",
+    "category-image": "images/manager.webp",
     "company": "Life of Pie",
     "company-image": "images/pie.png",
     "levelOfHappiness": "10"
@@ -84,7 +84,7 @@
     "id": "10",
     "name": "Ricardo Lini",
     "category": "manager",
-    "category-image": "images/manager.png",
+    "category-image": "images/manager.webp",
     "company": "Basic Kneads Pizza",
     "company-image": "images/pizza.png",
     "levelOfHappiness": "55"
@@ -93,7 +93,7 @@
     "id": "11",
     "name": "Jayde Mccallum",
     "category": "employee",
-    "category-image": "images/employee.png",
+    "category-image": "images/employee.webp",
     "company": "Earth Wind And Flour",
     "company-image": "images/flour.png",
     "levelOfHappiness": "56"
@@ -102,7 +102,7 @@
     "id": "12",
     "name": "Sakina Tillman",
     "category": "employee",
-    "category-image": "images/employee.png",
+    "category-image": "images/employee.webp",
     "company": "9021 Pho",
     "company-image": "images/pho.png",
     "levelOfHappiness": "50"
@@ -111,7 +111,7 @@
     "id": "13",
     "name": "Ashwin Andrews",
     "category": "employee",
-    "category-image": "images/employee.png",
+    "category-image": "images/employee.webp",
     "company": "Sweet Cheezus",
     "company-image": "images/cheezus.png",
     "levelOfHappiness": "82"
@@ -120,7 +120,7 @@
     "id": "14",
     "name": "Rheanna Gilmour",
     "category": "employee",
-    "category-image": "images/employee.png",
+    "category-image": "images/employee.webp",
     "company": "Fishcoteque",
     "company-image": "images/fishcoteque.png",
     "levelOfHappiness": "23"
@@ -129,7 +129,7 @@
     "id": "15",
     "name": "Joann Weiss",
     "category": "employee",
-    "category-image": "images/employee.png",
+    "category-image": "images/employee.webp",
     "company": "Grill Em All",
     "company-image": "images/emall.png",
     "levelOfHappiness": "55"
@@ -138,7 +138,7 @@
     "id": "16",
     "name": "Everett Medrano",
     "category": "employee",
-    "category-image": "images/employee.png",
+    "category-image": "images/employee.webp",
     "company": "A Cut Above",
     "company-image": "images/above.png",
     "levelOfHappiness": "50"
@@ -147,7 +147,7 @@
     "id": "17",
     "name": "Duncan Gaines",
     "category": "employee",
-    "category-image": "images/employee.png",
+    "category-image": "images/employee.webp",
     "company": "Fro-ternity",
     "company-image": "images/ternity.png",
     "levelOfHappiness": "45"
@@ -156,7 +156,7 @@
     "id": "18",
     "name": "Inaya Cope",
     "category": "employee",
-    "category-image": "images/employee.png",
+    "category-image": "images/employee.webp",
     "company": "Jack the Clipper",
     "company-image": "images/clipper.png",
     "levelOfHappiness": "81"
@@ -165,7 +165,7 @@
     "id": "19",
     "name": "Samad Emery",
     "category": "employee",
-    "category-image": "images/employee.png",
+    "category-image": "images/employee.webp",
     "company": "My Hair Lady",
     "company-image": "images/lady.png",
     "levelOfHappiness": "35"
@@ -174,7 +174,7 @@
     "id": "20",
     "name": "Ellouise Hammond",
     "category": "employee",
-    "category-image": "images/employee.png",
+    "category-image": "images/employee.webp",
     "company": "The Director’s Cut",
     "company-image": "images/cut.png",
     "levelOfHappiness": "56"
