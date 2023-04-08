@@ -1,13 +1,13 @@
 import type { User, UserMock } from '../models/user.model'
 
-export const userAdapter = (person: UserMock): User => {
+export const userAdapter = (user: UserMock): User => {
   return {
-    id: person.id,
-    name: person.name,
-    category: person.category,
-    categoryImage: person['category-image'],
-    company: person.company,
-    companyImage: person['company-image'],
-    levelOfHappiness: person.levelOfHappiness,
+    id: user.id,
+    name: user.name,
+    category: user.category,
+    categoryImage: user['category-image'],
+    company: user.company,
+    companyImage: user['company-image'],
+    levelOfHappiness: user.levelOfHappiness,
   }
 }
