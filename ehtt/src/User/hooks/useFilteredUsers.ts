@@ -12,7 +12,7 @@ export function useFilteredUsers() {
   const [users, setUsers] = useState<User[]>([])
   const [search, setSearch] = useState('')
 
-  const { initialUsers, loading, updateFavorite } = useUsers()
+  const { initialUsers, loading, handleLevelOfHappiness } = useUsers()
   const {
     next,
     prev,
@@ -45,12 +45,12 @@ export function useFilteredUsers() {
 
   return {
     users: usersPaginated,
+    loading,
     search,
     page,
-    loading,
     next,
     prev,
-    updateFavorite,
     onSearch,
+    handleLevelOfHappiness,
   }
 }

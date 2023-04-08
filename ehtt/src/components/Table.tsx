@@ -1,7 +1,9 @@
+import type { ReactNode } from 'react'
+
 /* eslint-disable react/no-array-index-key */
 interface TableProps {
-  headers: string[]
-  body: React.ReactNode[][]
+  headers: ReactNode[]
+  body: ReactNode[][]
 }
 
 export function Table({ headers, body }: TableProps) {
@@ -10,8 +12,8 @@ export function Table({ headers, body }: TableProps) {
       <table className="w-full text-sm text-left text-gray-500">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50">
           <tr>
-            {headers.map(header => (
-              <th key={header} className="px-6 py-3" scope="col">
+            {headers.map((header, headerIndex) => (
+              <th key={headerIndex} className="px-6 py-3" scope="col">
                 {header}
               </th>
             ))}

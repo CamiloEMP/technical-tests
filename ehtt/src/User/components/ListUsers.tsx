@@ -5,12 +5,15 @@ import { useMemo } from 'react'
 
 import { Table } from '@/components/Table'
 
+import { useUsers } from '../context/UsersContext'
+
 interface ListProps {
   users: User[]
-  updateFavorite: (id: string) => void
 }
 
-export function ListUsers({ users, updateFavorite }: ListProps) {
+export function ListUsers({ users }: ListProps) {
+  const { handleLevelOfHappiness, updateFavorite, orderHappiness } = useUsers()
+
   const body = useMemo(() => {
     return users.map(user => [
       <button type="button" onClick={() => updateFavorite(user.id)}>
@@ -35,7 +38,12 @@ export function ListUsers({ users, updateFavorite }: ListProps) {
         'Category Image',
         'Company',
         'Company Image',
-        'Level of Hapiness',
+        <div className="flex items-center gap-1">
+          Level of Hapiness
+          <button type="button" onClick={handleLevelOfHappiness}>
+            {orderHappiness === 'asc' ? 'up' : 'down'}
+          </button>
+        </div>,
       ]}
     />
   )

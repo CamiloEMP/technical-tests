@@ -12,5 +12,5 @@ export async function getUsers() {
 
   const users = data.map(userAdapter)
 
-  return { users, totalUsers: users.length }
+  return users
 }

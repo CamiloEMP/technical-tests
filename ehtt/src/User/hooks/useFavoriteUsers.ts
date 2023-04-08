@@ -8,7 +8,7 @@ import { useUsers } from '../context/UsersContext'
 import { INITIAL_PAGE, USERS_PER_PAGE } from '../constants'
 
 export function useFavoriteUsers() {
-  const { initialUsers, updateFavorite } = useUsers()
+  const { initialUsers } = useUsers()
   const [users, setUsers] = useState<User[]>([])
 
   const { dataPaginated, next, page, prev } = usePagination<User>({
@@ -24,7 +24,6 @@ export function useFavoriteUsers() {
 
   return {
     favoriteUsers: dataPaginated,
-    updateFavorite,
     page,
     next,
     prev,
