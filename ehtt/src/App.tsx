@@ -1,20 +1,24 @@
-import { ListUsers } from '@/User/components/ListUsers'
-import { useUsers } from '@/User/hooks/useUsers'
+import { useState } from 'react'
 
-import { SearcherItems } from './components/SearcherItems'
-import { ButtonPagination } from './components/ButtonPagination'
+import { Modal } from './components/Modal'
+import { UserSection } from './User/UserSection'
 
 function App() {
-  const { users, fetchNext, fetchPrevious, page, loading, updateFavorite, onSearch, search } =
-    useUsers()
+  const [favModal, setFavModal] = useState(false)
+
+  const handleFavModal = () => {
+    setFavModal(!favModal)
+  }
 
   return (
     <div className="text-xl">
-      <section className="max-w-screen-xl mx-auto">
-        <ButtonPagination isLoading={loading} next={fetchNext} page={page} prev={fetchPrevious} />
-        <SearcherItems search={search} onSearch={onSearch} />
-        {loading ? <p>Loading...</p> : <ListUsers updateFavorite={updateFavorite} users={users} />}
-      </section>
+      <button type="button" onClick={handleFavModal}>
+        Favoritos
+      </button>
+      <UserSection />
+      <Modal isOpen={favModal} onClose={handleFavModal}>
+        <span>holaaa</span>
+      </Modal>
     </div>
   )
 }
