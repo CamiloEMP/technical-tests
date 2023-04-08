@@ -2,9 +2,13 @@ import { useState } from 'react'
 
 import { Modal } from './components/Modal'
 import { UserSection } from './User/UserSection'
+import { ListUsers } from './User/components/ListUsers'
+import { useFavoriteUsers } from './User/hooks/useFavoriteUsers'
+import { ButtonPagination } from './components/ButtonPagination'
 
 function App() {
   const [favModal, setFavModal] = useState(false)
+  const { favoriteUsers, next, page, prev, updateFavorite } = useFavoriteUsers()
 
   const handleFavModal = () => {
     setFavModal(!favModal)
@@ -16,8 +20,9 @@ function App() {
         Favoritos
       </button>
       <UserSection />
-      <Modal isOpen={favModal} onClose={handleFavModal}>
-        <span>holaaa</span>
+      <Modal className="max-w-screen-2xl" isOpen={favModal} onClose={handleFavModal}>
+        <ButtonPagination isLoading={false} next={next} page={page} prev={prev} />
+        <ListUsers updateFavorite={updateFavorite} users={favoriteUsers} />
       </Modal>
     </div>
   )
