@@ -20,6 +20,18 @@ export function useUsers() {
     setPage(Math.max(page - 1, INITIAL_PAGE))
   }
 
+  const updateFavorite = (id: string) => {
+    const updatedUsers = users.map(user => {
+      if (id === user.id) {
+        return { ...user, favorite: !user.favorite }
+      }
+
+      return user
+    })
+
+    setUsers(updatedUsers)
+  }
+
   const fetchUsers = useCallback(() => {
     setLoading(true)
     getUsers({ page, search })
@@ -39,5 +51,5 @@ export function useUsers() {
     fetchUsers()
   }, [page, search, fetchUsers])
 
-  return { users, fetchNext, fetchPrevious, page, loading, search, setSearch }
+  return { users, fetchNext, fetchPrevious, page, loading, search, setSearch, updateFavorite }
 }

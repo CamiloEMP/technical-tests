@@ -6,6 +6,7 @@ export interface User {
   company: string
   companyImage: string
   levelOfHappiness: string
+  favorite: boolean
 }
 
 export interface UserMock {

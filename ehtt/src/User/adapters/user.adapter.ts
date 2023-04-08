@@ -9,5 +9,6 @@ export const userAdapter = (user: UserMock): User => {
     company: user.company,
     companyImage: user['company-image'],
     levelOfHappiness: user.levelOfHappiness,
+    favorite: false,
   }
 }

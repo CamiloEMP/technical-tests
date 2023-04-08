@@ -7,11 +7,15 @@ import { Table } from '@/components/Table'
 
 interface ListProps {
   users: User[]
+  updateFavorite: (id: string) => void
 }
 
-export function ListUsers({ users }: ListProps) {
+export function ListUsers({ users, updateFavorite }: ListProps) {
   const body = useMemo(() => {
     return users.map(user => [
+      <button type="button" onClick={() => updateFavorite(user.id)}>
+        {user.favorite ? '💖' : '🖤'}
+      </button>,
       user.name,
       user.category,
       <img alt={user.category} className="w-20" src={user.categoryImage} />,
@@ -19,12 +23,13 @@ export function ListUsers({ users }: ListProps) {
       <img alt={user.company} className="w-20" src={user.companyImage} />,
       user.levelOfHappiness,
     ])
-  }, [users])
+  }, [users, updateFavorite])
 
   return (
     <Table
       body={body}
       headers={[
+        'Favoritos',
         'Nombre',
         'Category',
         'Category Image',
