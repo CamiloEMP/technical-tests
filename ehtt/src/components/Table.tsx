@@ -1,24 +1,32 @@
-interface Props {
+/* eslint-disable react/no-array-index-key */
+interface TableProps {
   headers: string[]
   body: React.ReactNode[][]
 }
 
-export function Table ({headers, body}: Props) {
+export function Table({ headers, body }: TableProps) {
   return (
     <section className="relative overflow-x-auto">
       <table className="w-full text-sm text-left text-gray-500">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50">
           <tr>
             {headers.map(header => (
-              <th scope="col" className="px-6 py-3" key={header}>{header}</th>
+              <th key={header} className="px-6 py-3" scope="col">
+                {header}
+              </th>
             ))}
           </tr>
         </thead>
         <tbody>
           {body.map((row, rowIndex) => (
-            <tr className="bg-white border-b" key={rowIndex}>
+            <tr key={rowIndex} className="bg-white border-b">
               {row.map((column, columnIndex) => (
-                <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap" key={columnIndex}>{column}</td>
+                <td
+                  key={columnIndex}
+                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+                >
+                  {column}
+                </td>
               ))}
             </tr>
           ))}
