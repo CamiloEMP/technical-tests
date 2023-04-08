@@ -1,13 +1,13 @@
 interface SearcherProps {
   search: string
-  setSearch: React.Dispatch<React.SetStateAction<string>>
+  onSearch: (search: string) => void
 }
 
-export function SearcherItems({ search, setSearch }: SearcherProps) {
+export function SearcherItems({ search, onSearch }: SearcherProps) {
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault()
+    const value = e.target.value
 
-    setSearch(e.target.value)
+    onSearch(value)
   }
 
   return (
