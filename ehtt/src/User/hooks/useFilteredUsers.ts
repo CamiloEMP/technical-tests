@@ -1,4 +1,8 @@
+import type { User } from '../models/user.model'
+
 import { useEffect, useState } from 'react'
+
+import { usePagination } from '@/hooks/usePagination'
 
 import { INITIAL_PAGE, USERS_PER_PAGE } from '../constants'
 import { useUsers } from '../context/UsersContext'
@@ -6,23 +10,19 @@ import { filterUsersBySearch } from '../utils/filterUsersBySearch'
 
 export function useFilteredUsers() {
   const { initialUsers, loading, updateFavorite } = useUsers()
-  const [users, setUsers] = useState(() => initialUsers)
+  const { fetchNext, fetchPrevious, page, resetPage } = usePagination({
+    dataPerPage: USERS_PER_PAGE,
+    initialPage: INITIAL_PAGE,
+    totalData: initialUsers.length,
+  })
 
-  const [page, setPage] = useState(INITIAL_PAGE)
+  const [users, setUsers] = useState<User[]>([])
   const [search, setSearch] = useState('')
 
   const usersPaginated = users.slice(page * USERS_PER_PAGE - USERS_PER_PAGE, page * USERS_PER_PAGE)
 
-  const fetchNext = () => {
-    setPage(currentPage => Math.min(currentPage + 1, Math.ceil(users.length / USERS_PER_PAGE)))
-  }
-
-  const fetchPrevious = () => {
-    setPage(Math.max(page - 1, INITIAL_PAGE))
-  }
-
   const onSearch = (value: string) => {
-    setPage(INITIAL_PAGE)
+    resetPage()
     setSearch(value)
 
     if (value === '') {
