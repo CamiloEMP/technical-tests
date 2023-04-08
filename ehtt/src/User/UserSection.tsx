@@ -2,11 +2,11 @@ import { ButtonPagination } from '@/components/ButtonPagination'
 import { SearcherItems } from '@/components/SearcherItems'
 
 import { ListUsers } from './components/ListUsers'
-import { useUsers } from './hooks/useUsers'
+import { useFilteredUsers } from './hooks/useFilteredUsers'
 
 export function UserSection() {
   const { users, fetchNext, fetchPrevious, page, loading, updateFavorite, onSearch, search } =
-    useUsers()
+    useFilteredUsers()
 
   return (
     <section className="max-w-screen-xl mx-auto">
