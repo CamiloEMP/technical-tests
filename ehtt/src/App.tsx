@@ -4,6 +4,8 @@ import { FavoriteUsers } from '@/User/sections/FavoriteUsers'
 import { TableUsers } from '@/User/sections/TableUsers'
 import { Modal } from '@/components/Modal'
 
+import { Navbar } from './components/Navbar'
+
 function App() {
   const [favModal, setFavModal] = useState(false)
 
@@ -13,13 +15,11 @@ function App() {
 
   return (
     <>
-      <div className="text-xl">
-        <button type="button" onClick={handleFavModal}>
-          Favoritos
-        </button>
+      <main className="max-w-screen-xl mx-auto space-y-6">
+        <Navbar handleFavModal={handleFavModal} />
         <TableUsers />
-      </div>
-      <Modal className="max-w-screen-2xl" isOpen={favModal} onClose={handleFavModal}>
+      </main>
+      <Modal className="p-12 max-w-screen-2xl" isOpen={favModal} onClose={handleFavModal}>
         <FavoriteUsers />
       </Modal>
     </>

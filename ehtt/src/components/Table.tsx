@@ -8,7 +8,7 @@ interface TableProps {
 
 export function Table({ headers, body }: TableProps) {
   return (
-    <section className="relative overflow-x-auto">
+    <section className="relative overflow-x-auto shadow-md">
       <table className="w-full text-sm text-left text-gray-500">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50">
           <tr>
@@ -25,7 +25,7 @@ export function Table({ headers, body }: TableProps) {
               {row.map((column, columnIndex) => (
                 <td
                   key={columnIndex}
-                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+                  className="px-6 py-4 font-semibold text-gray-900 whitespace-nowrap"
                 >
                   {column}
                 </td>

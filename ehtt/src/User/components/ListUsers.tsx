@@ -4,6 +4,7 @@ import type { User } from '../models/user.model'
 import { useMemo } from 'react'
 
 import { Table } from '@/components/Table'
+import { DownArrowIcon, UpArrowIcon } from '@/components/icons/ArrowIcons'
 
 import { useUsers } from '../context/UsersContext'
 
@@ -42,7 +43,7 @@ export function ListUsers({ users, handleLevelOfHappiness }: ListProps) {
         <div className="flex items-center gap-1">
           Level of Hapiness
           <button type="button" onClick={handleLevelOfHappiness}>
-            {orderHappiness === 'asc' ? 'up' : 'down'}
+            {orderHappiness === 'asc' ? <UpArrowIcon /> : <DownArrowIcon />}
           </button>
         </div>,
       ]}

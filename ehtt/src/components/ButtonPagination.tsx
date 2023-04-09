@@ -1,3 +1,5 @@
+import { LeftArrowIcon, RightArrowIcon } from './icons/ArrowIcons'
+
 interface PageProps {
   page: number
   next: () => void
@@ -7,23 +9,23 @@ interface PageProps {
 
 export function ButtonPagination({ next, page, prev, isLoading }: PageProps) {
   return (
-    <div className="flex justify-center gap-2">
+    <div className="flex items-center justify-center gap-4">
       <button
-        className="p-1 text-sm text-white rounded bg-neutral-900 disabled:cursor-not-allowed disabled:bg-neutral-900/50"
+        className="py-0.5 px-1 text-white rounded bg-neutral-900 disabled:cursor-not-allowed disabled:bg-neutral-900/50"
         disabled={page === 1 || isLoading}
         type="button"
         onClick={prev}
       >
-        Prev
+        <LeftArrowIcon className="w-5" />
       </button>
       <span>{page}</span>
       <button
-        className="p-1 text-sm text-white rounded bg-neutral-900 disabled:cursor-not-allowed disabled:bg-neutral-900/50"
+        className="py-0.5 px-1 text-white rounded bg-neutral-900 disabled:cursor-not-allowed disabled:bg-neutral-900/50"
         disabled={isLoading}
         type="button"
         onClick={next}
       >
-        Next
+        <RightArrowIcon className="w-5" />
       </button>
     </div>
   )

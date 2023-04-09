@@ -13,7 +13,8 @@ export function SearcherItems({ search, onSearch }: SearcherProps) {
   return (
     <section>
       <input
-        className="px-2 py-1 text-sm font-medium border rounded outline-none border-neutral-300"
+        className="px-2 py-1 text-sm font-semibold border-2 rounded outline-none focus:border-neutral-800 border-neutral-300"
+        placeholder="Buscar..."
         type="text"
         value={search}
         onChange={handleSearch}
