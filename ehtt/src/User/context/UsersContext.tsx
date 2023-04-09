@@ -12,9 +12,9 @@ export type OrderHappiness = 'asc' | 'desc'
 export interface ContextUsersProps {
   loading: boolean
   initialUsers: User[]
-  updateFavorite: (id: string) => void
-  handleLevelOfHappiness: () => void
   orderHappiness: OrderHappiness
+  updateFavorite: (id: string) => void
+  handleLevelOfHappiness: (currentUsers: User[]) => User[]
 }
 
 export const UsersContext = createContext({} as ContextUsersProps)
@@ -30,16 +30,17 @@ export function UsersProvider({ children }: { children: React.ReactNode }) {
     setInitialUsers(users)
   }
 
-  const handleLevelOfHappiness = () => {
+  const handleLevelOfHappiness = (currentUsers: User[]) => {
     setLoading(true)
     const orderBy = orderHappiness === 'asc' ? 'desc' : 'asc'
 
     setOrderHappiness(orderBy)
 
-    const users = orderUsersByLevelOfHappiness(initialUsers, orderBy)
+    const users = orderUsersByLevelOfHappiness(currentUsers, orderBy)
 
-    setInitialUsers(users)
     setLoading(false)
+
+    return users
   }
 
   useEffect(() => {
@@ -58,7 +59,13 @@ export function UsersProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <UsersContext.Provider
-      value={{ initialUsers, loading, updateFavorite, handleLevelOfHappiness, orderHappiness }}
+      value={{
+        initialUsers,
+        loading,
+        updateFavorite,
+        handleLevelOfHappiness,
+        orderHappiness,
+      }}
     >
       {children}
     </UsersContext.Provider>

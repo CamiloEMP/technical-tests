@@ -8,7 +8,7 @@ import { ButtonPagination } from './components/ButtonPagination'
 
 function App() {
   const [favModal, setFavModal] = useState(false)
-  const { favoriteUsers, next, page, prev } = useFavoriteUsers()
+  const { favoriteUsers, next, page, prev, handleLevelOfHappiness } = useFavoriteUsers()
 
   const handleFavModal = () => {
     setFavModal(!favModal)
@@ -22,7 +22,7 @@ function App() {
       <UserSection />
       <Modal className="max-w-screen-2xl" isOpen={favModal} onClose={handleFavModal}>
         <ButtonPagination isLoading={false} next={next} page={page} prev={prev} />
-        <ListUsers users={favoriteUsers} />
+        <ListUsers handleLevelOfHappiness={handleLevelOfHappiness} users={favoriteUsers} />
       </Modal>
     </div>
   )

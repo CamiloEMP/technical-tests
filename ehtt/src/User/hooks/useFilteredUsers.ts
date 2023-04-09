@@ -38,9 +38,19 @@ export function useFilteredUsers() {
     setUsers(filterUsersBySearch(initialUsers, value))
   }
 
+  const handleHappiness = () => {
+    if (search === '') resetPage()
+
+    const usersOrdered = handleLevelOfHappiness(users)
+
+    setUsers(usersOrdered)
+  }
+
   useEffect(() => {
     if (initialUsers.length === 0) return
     setUsers(initialUsers)
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialUsers])
 
   return {
@@ -51,6 +61,6 @@ export function useFilteredUsers() {
     next,
     prev,
     onSearch,
-    handleLevelOfHappiness,
+    handleLevelOfHappiness: handleHappiness,
   }
 }

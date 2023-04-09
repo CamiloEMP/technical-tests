@@ -9,10 +9,11 @@ import { useUsers } from '../context/UsersContext'
 
 interface ListProps {
   users: User[]
+  handleLevelOfHappiness: () => void
 }
 
-export function ListUsers({ users }: ListProps) {
-  const { handleLevelOfHappiness, updateFavorite, orderHappiness } = useUsers()
+export function ListUsers({ users, handleLevelOfHappiness }: ListProps) {
+  const { updateFavorite, orderHappiness } = useUsers()
 
   const body = useMemo(() => {
     return users.map(user => [

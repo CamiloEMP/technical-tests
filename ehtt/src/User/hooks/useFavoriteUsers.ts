@@ -8,7 +8,7 @@ import { useUsers } from '../context/UsersContext'
 import { INITIAL_PAGE, USERS_PER_PAGE } from '../constants'
 
 export function useFavoriteUsers() {
-  const { initialUsers } = useUsers()
+  const { initialUsers, handleLevelOfHappiness } = useUsers()
   const [users, setUsers] = useState<User[]>([])
 
   const { dataPaginated, next, page, prev } = usePagination<User>({
@@ -16,6 +16,12 @@ export function useFavoriteUsers() {
     initialPage: INITIAL_PAGE,
     data: users,
   })
+
+  const handleHappiness = () => {
+    const usersOrdered = handleLevelOfHappiness(users)
+
+    setUsers(usersOrdered)
+  }
 
   useEffect(() => {
     if (initialUsers.length === 0) return
@@ -27,5 +33,6 @@ export function useFavoriteUsers() {
     page,
     next,
     prev,
+    handleLevelOfHappiness: handleHappiness,
   }
 }
