@@ -1,10 +1,9 @@
 import { ButtonPagination } from '@/components/ButtonPagination'
 import { SearcherItems } from '@/components/SearcherItems'
+import { ListUsers } from '@/User/components/ListUsers'
+import { useFilteredUsers } from '@/User/hooks/useFilteredUsers'
 
-import { ListUsers } from './components/ListUsers'
-import { useFilteredUsers } from './hooks/useFilteredUsers'
-
-export function UserSection() {
+export function TableUsers() {
   const { users, next, prev, page, loading, onSearch, search, handleLevelOfHappiness } =
     useFilteredUsers()
 
